@@ -1,0 +1,49 @@
+>> START content.its <<
+
+> START DATA STORAGE <
+
+
+$ Track_Signalling
+
+    $ Deutschland
+    
+        infrastructure: "DB Netz AG"
+        ; ... ;
+        
+        $ Signale
+            
+            @ HpSig, VrSig
+                lights = null
+                red:
+                green:
+                yellow:
+                position: "Asig", "Esig", "Zsig", "Bksig"
+        
+            $ HpSig
+                name: "Hp-Signal"
+                description: "..."
+                indication: "Hp0", "Hp1", "Hp2"
+                variant: "classic", "full", "corners", "triangular"
+                inner_nomenclature: Hp %%
+                script: {
+                    if HpSig.variant == "classic":
+                        texture = "hpclassic.svg"
+                        lights.Hp0 = red [(1,2),2]
+                        lights.Hp1 = green [1,1]
+                        lights.Hp2 = green [1,1] yellow [1,5]
+                    if HpSig.variant == "full":
+                        texture = "hpfull.svg"
+                        lights.Hp0 = red [(1,2),2]
+                        lights.Hp1 = green [1,1]
+                        lights.Hp2 = green [1,1] yellow [1,5]
+                    if HpSig.variant == "corners":
+                        texture = "hpcorners.svg"
+                        lights.Hp0 = red [1,2]
+                        lights.Hp1 = green [2,1]
+                        lights.Hp2 = green [2,1] yellow [2,2]
+                    if HpSig.variant == "triangular":
+                        texture = "hptriangular.svg"
+                        lights.Hp0 = red [(1,3),1]
+                        lights.Hp1 = green [2,1]
+                        lights.Hp2 = green [2,1] yellow [2,5]
+                }
