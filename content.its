@@ -24,7 +24,7 @@ $ Track_Signalling
                 description: "..."
                 indication: "Hp0", "Hp1", "Hp2"
                 variant: "classic", "full", "corners", "triangular"
-                inner_nomenclature: "Hp %%"
+                inner_nomenclature: "Hp %*%"
                 script: {
                     if HpSig.variant == "classic":
                         texture = "hpclassic.svg"
